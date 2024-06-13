@@ -5,10 +5,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'airbnb',
-    'prettier',
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   // 어떤 ecma 버전으로 parsing 할 것인지
   parserOptions: {
@@ -54,6 +54,7 @@ module.exports = {
   // 패키지 안에 있는 이러한 룰 사용
   // off, warn, error 3가지 상태로 정의해서 사용 가능
   rules: {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     // import 문에서 확장자가 .svg?react인 파일을 무시
     'import/no-unresolved': ['error', { ignore: ['\\.svg\\?react$'] }],
     // 변수 이름이 '_'로 시작하는 경우 사용하지 않는 변수에 대한 경고 무시
